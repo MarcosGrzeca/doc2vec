@@ -72,4 +72,5 @@ def run(dataset_file):
 
 
 if __name__ == "__main__":
-    run("dataset.csv")
+    # run("dataset.csv")
+    run("datasetds1q1.csv")
