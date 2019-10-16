@@ -17,7 +17,8 @@ data_path = os.path.join(project_dir_path, 'data')
 default_classifier = os.path.join(
     project_dir_path, 'classifiers', 'logreg_model.pkl')
 default_doc2vec = os.path.join(project_dir_path, 'classifiers', 'd2v.model')
-default_dataset = os.path.join(data_path, 'dataset.csv')
+# default_dataset = os.path.join(data_path, 'dataset.csv')
+default_dataset = os.path.join(data_path, 'datasetds1q1.csv')
 
 
 class TextClassifier():
