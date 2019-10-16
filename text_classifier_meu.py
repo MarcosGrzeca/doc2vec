@@ -41,7 +41,7 @@ class TextClassifier():
     def read_data(self, filename):
         filename = os.path.join(data_path, filename)
         self.dataset = pd.read_csv(filename, header=0, delimiter="\t")
-        self.dataset.sentiment = self.dataset.sentiment.apply(self..cleanText)
+        self.dataset.sentiment = self.dataset.sentiment.apply(self.cleanText)
 
     def prepare_all_data(self):
         x_train, x_test, y_train, y_test = train_test_split(
