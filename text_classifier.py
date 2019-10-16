@@ -32,6 +32,15 @@ class TextClassifier():
     def read_data(self, filename):
         filename = os.path.join(data_path, filename)
         self.dataset = pd.read_csv(filename, header=0, delimiter="\t")
+        self.dataset.sentiment = self.dataset.sentiment.apply(cleanText)
+
+    def cleanText(text):
+        text = BeautifulSoup(text, "lxml").text
+        text = re.sub(r'\|\|\|', r' ', text) 
+        text = re.sub(r'http\S+', r'<URL>', text)
+        text = text.lower()
+        text = text.replace('x', '')
+        return text
 
     def prepare_all_data(self):
         x_train, x_test, y_train, y_test = train_test_split(
